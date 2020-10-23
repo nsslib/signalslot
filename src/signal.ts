@@ -15,11 +15,9 @@ export default class Signal {
         memory.createSignalTableInMemory(obj);
     }
 
-    emit = (signalName: string, value: any) => {
-        memory.updateValueOnSignalTable(signalName, value);
-    }
+    emit = (signalName: string, value: any) => memory.updateValueOnSignalTable(signalName, value);
 
-    readAllSignalTable = (): IMemory => {
-        return memory.readAllMemory();
-    }
+    readAllTable = (): IMemory => memory.readAllMemory();
+
+    readTable = (signalName: string): IMemoryObject | undefined => memory.readSingleMemory(signalName);
 }

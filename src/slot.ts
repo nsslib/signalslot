@@ -6,11 +6,7 @@ import { t_slotFn } from './interfaces'
 
 export default class Slot {
 
-    register = (signalName: string, fn: t_slotFn) => {
-        memory.pushSlotIntoSignalTable(signalName, fn);
-    }
+    register = (signalName: string, fn: t_slotFn) => memory.pushSlotIntoSignalTable(signalName, fn);
 
-    count = (signaName: string): number => {
-        return memory.slotLength(signaName)
-    }
+    count = (signaName: string): number => memory.slotLength(signaName)
 }
